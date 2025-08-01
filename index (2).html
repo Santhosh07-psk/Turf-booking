@@ -1,0 +1,73 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to Turf Booking</h1>
+    <p>Find and book the best turfs around you in minutes.</p>
+    <button [routerLink]="['/turf']" class="details-button">Book Now</button>
+  </div>
+  <div class="hero-image">
+    <img src="assets/hero-image.png" alt="Turf Booking" />
+  </div>
+</section>
+
+<!-- Highlights -->
+<section class="highlights">
+  <h2>Why Choose Us?</h2>
+  <div class="highlight-cards">
+    <div class="highlight-card">
+      <img src="assets/Variety-Icon.jpeg" alt="Variety" />
+      <h3>Wide Options</h3>
+      <p>Select from a range of top-quality turfs.</p>
+    </div>
+    <div class="highlight-card">
+      <img src="assets/booknow1.jpeg" alt="Booking" />
+      <h3>Quick Booking</h3>
+      <p>Fast, simple, and user-friendly booking process.</p>
+    </div>
+    <div class="highlight-card">
+      <img src="assets/seurity.jpeg" alt="Secure" />
+      <h3>Secure Payment</h3>
+      <p>Your payment information is safe with us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Turfs -->
+<section class="featured-turfs">
+  <h2>Top Rated Turfs</h2>
+  <div class="turfs-grid">
+    <div class="turf-card" *ngFor="let turf of futureTurfs">
+      <img [src]="turf.imageUrl" [alt]="turf.name" class="turf-img" />
+      <h3>{{ turf.name }}</h3>
+      <p><strong>Sport:</strong> {{ turf.sport }}</p>
+      <p><strong>Location:</strong> {{ turf.location }}</p>
+      <p><strong>Price per Hour:</strong> ${{ turf.price }}</p>
+      <p>{{ turf.description }}</p>
+      <button [routerLink]="['/turf', turf.id]" class="details-button">View Details</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Our Users Say</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-card" *ngFor="let review of testimonials">
+      <p>"{{ review.feedback }}"</p>
+      <strong>- {{ review.name }}</strong>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Ready to Book Your Game?</h2>
+  <p>Join hundreds of players already enjoying our platform.</p>
+  <button class="primary-button">Get Started</button>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 Turf Booking. Made with <span class="heart">♥</span></p>
+</footer>
